@@ -1,0 +1,34 @@
+**Project Overview: Data Correction and Visualization**
+
+**Objective:**
+The goal of this Python project is to process an Excel workbook, specifically the 'Sheet1' of the workbook, by adjusting prices and adding a bar chart to visualize the corrected prices.
+
+**Libraries Used:**
+- `openpyxl`: A library for reading and writing Excel files.
+- `openpyxl.chart`: A submodule for creating charts in Excel using openpyxl.
+
+**Function: `process_workbook(filename)`**
+- **Parameters:**
+  - `filename`: The name or path of the Excel file to be processed.
+
+- **Workflow:**
+  1. Load the workbook using `openpyxl`.
+  2. Access the 'Sheet1' within the workbook.
+  3. Iterate through each row starting from the 2nd row (skipping the header).
+  4. Retrieve the value in the 3rd column of the current row (assuming 1st column is A, 2nd is B, etc.).
+  5. Calculate a corrected price by reducing the original price by 10% (multiplying by 0.9).
+  6. Update the value in the 4th column of the current row with the corrected price.
+  7. Define a data range (Reference) for the corrected prices.
+  8. Create a BarChart using the corrected prices data.
+  9. Add the chart to the sheet starting at cell 'e2'.
+  10. Save the modified workbook.
+
+- **Example Usage:**
+  ```python
+  process_workbook('your_excel_file.xlsx')
+  ```
+
+**Note:**
+- Ensure that the Excel file has a sheet named 'Sheet1'.
+- This project assumes that the original prices are in the 3rd column, and the corrected prices will be placed in the 4th column.
+- Adjust the column indices and chart location as needed based on your specific Excel file structure.
